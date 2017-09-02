@@ -2,7 +2,7 @@
 
 ### A (very) simple program that returns random Richard Stallman "facts".
 
-<p align="center"><img src="/img/rms.png" /></p>
+<p align="center"><img src="/img/rms.png" width="50%" height="50%"/></p>
 
 ### TODOS:
 Make it run on a server, deploy on heroku.
