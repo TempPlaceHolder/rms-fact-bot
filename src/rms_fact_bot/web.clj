@@ -1,8 +1,23 @@
-(ns rms-fact-bot.core
-  (:gen-class))
+(ns rms-fact-bot.web
+  (:require [compojure.core :refer :all]
+            [compojure.handler :refer [site]]
+            [compojure.route :as route]
+            [clojure.java.io :as io]
+            [ring.adapter.jetty :as jetty]
+            [environ.core :refer [env]]))
 
-(defn random-fact []
-  (rand-nth facts))
+(defn splash []
+  {:status 200
+   :headers {"Content-Type" "text/plain"}
+   :body "Hello from GNU"})
+
+(defroutes app
+  (GET "/" []
+       (splash)))
+
+(defn -main [& [port]]
+  (let [port (Integer. (or port (env :port) 5005))]
+    (jetty/run-jetty (site #'app) {:port port :join? false})))
 
 (def facts ["Richard Stallman takes notes in binary."
             "Richard Stallman is my shephurd, and I am his GNU."
@@ -117,3 +132,6 @@
             "Richard Stallman exists because he compiled himself into being."
             "Richard Stallman's first words were in binary. When they couldn't understand him, he wrote a parser."
             "Richard Stallman doesn't need any codecs, he just opens a multimedia file with Emacs, and reads the bytes of the file as plain text. He then performs all the necessary decoding in his mind. But he refuses to decode files encrypted with DRM, although his mind is able to."])
+
+(defn random-fact []
+  (rand-nth facts))
