@@ -6,19 +6,6 @@
             [ring.adapter.jetty :as jetty]
             [environ.core :refer [env]]))
 
-(defn splash []
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "Hello from GNU"})
-
-(defroutes app
-  (GET "/" []
-       (splash)))
-
-(defn -main [& [port]]
-  (let [port (Integer. (or port (env :port) 5000))]
-    (jetty/run-jetty (site #'app) {:port port :join? false})))
-
 (def facts ["Richard Stallman takes notes in binary."
             "Richard Stallman is my shephurd, and I am his GNU."
             "Richard Stallman doesn't wget, Richard Stallman wdemands!"
@@ -135,3 +122,16 @@
 
 (defn random-fact []
   (rand-nth facts))
+
+(defn splash []
+  {:status 200
+   :headers {"Content-Type" "text/plain"}
+   :body (random-fact)})
+
+(defroutes app
+  (GET "/" []
+       (splash)))
+
+(defn -main [& [port]]
+  (let [port (Integer. (or port (env :port) 5000))]
+    (jetty/run-jetty (site #'app) {:port port :join? false})))
