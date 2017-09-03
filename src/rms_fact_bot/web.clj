@@ -1,5 +1,6 @@
 (ns rms-fact-bot.web
   (:require [compojure.core :refer :all]
+            [clojure.string :as string]
             [compojure.handler :refer [site]]
             [compojure.route :as route]
             [clojure.java.io :as io]
