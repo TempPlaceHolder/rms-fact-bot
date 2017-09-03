@@ -29,7 +29,7 @@
             "Richard Stallman successfully compiled a kernel of popcorn."
             "Richard Stallman doesn't write programs; they write themselves out of reverence."
             "Richard Stallman can make infinite loops end."
-            "Richard Stallman's anti-virus programs cures H IV."
+            "Richard Stallman's anti-virus programs cures HIV."
             "Richard Stallman's computer doesn't have a clock; it defines what time it is."
             "Richard Stallman wrote a program to compute the last digit of pi."
             "Richard Stallman doesn't use web browsers. He sends a link to a daemon that uses something like wget to fetch the page and sends it back to him."
@@ -134,7 +134,7 @@
   (GET "/" []
        (splash))
   (POST "/" []
-        (string/join "" ["{\"color\":\"purple\", \"message\":\"Let's go to " (random-fact) "\", \"notify\":true, \"message_format\":\"text\"}"])))
+        (string/join "" ["{\"color\":\"purple\", \"message\":\"Let's go to " "\", \"notify\":true, \"message_format\":\"text\"}"])))
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 5000))]
