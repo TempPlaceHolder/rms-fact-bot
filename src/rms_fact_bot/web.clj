@@ -133,7 +133,7 @@
   (GET "/" []
        (splash))
   (POST "/" []
-        (string/join "" ["{\"color\":\"purple\", \"message\":\"Let's go to " "\", \"notify\":true, \"message_format\":\"text\"}"])))
+        (string/join "" ["{\"color\":\"purple\", \"message\":\"" (random-fact) "\", \"notify\":true, \"message_format\":\"text\"}"])))
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 5000))]
