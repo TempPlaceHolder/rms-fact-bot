@@ -7,4 +7,5 @@
   :min-lein-version "2.0.0"
   :plugins [[environ/environ.lein "0.3.1"]]
   :hooks [environ.leiningen.hooks]
-  :profiles {:uberjar {:aot :all}})
+  :uberjar-name "rms-fact-bot.jar"
+  :profile {:production {:env {:production true}}})
