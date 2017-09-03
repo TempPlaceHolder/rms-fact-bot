@@ -121,8 +121,6 @@
             "Richard Stallman doesn't need any codecs, he just opens a multimedia file with Emacs, and reads the bytes of the file as plain text. He then performs all the necessary decoding in his mind. But he refuses to decode files encrypted with DRM, although his mind is able to."])
 
 (defn random-fact []
-  (POST "/" [] (fn [req]
-                 (string/join "" ["{\"color\":\"purple\", \"message\":\"Let's go to " (random-restaurant []) "\", \"notify\":true, \"message_format\":\"text\"}"])))
   (rand-nth facts))
 
 (defn splash []
