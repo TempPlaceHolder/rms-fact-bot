@@ -1,5 +1,6 @@
 # Richard Stallman fact bot
 
+
 ### A (very) simple program that returns random Richard Stallman "facts".
 
 <p align="center"><img src="/img/rms.png" width="50%" height="50%"/></p>
@@ -25,4 +26,5 @@ The app should now be running at http://localhost:5000
     lein test
 
 ### TODOS:
-Deploy on heroku.
+Document heroku deployment.
+
