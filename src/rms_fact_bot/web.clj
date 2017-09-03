@@ -16,7 +16,7 @@
        (splash)))
 
 (defn -main [& [port]]
-  (let [port (Integer. (or port (env :port) 5005))]
+  (let [port (Integer. (or port (env :port) 5000))]
     (jetty/run-jetty (site #'app) {:port port :join? false})))
 
 (def facts ["Richard Stallman takes notes in binary."
