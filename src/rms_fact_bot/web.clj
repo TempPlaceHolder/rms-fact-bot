@@ -8,6 +8,7 @@
             [environ.core :refer [env]]))
 
 (def facts ["Richard Stallman takes notes in binary."
+            "Richard Stallman once wrote an emacs package that eliminates technical debt."
             "Richard Stallman is my shephurd, and I am his GNU."
             "Richard Stallman doesn't wget, Richard Stallman wdemands!"
             "Richard Stallman can touch MC Hammer."
